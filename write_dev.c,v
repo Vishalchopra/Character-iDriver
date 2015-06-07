@@ -1,0 +1,89 @@
+head	1.1;
+access;
+symbols;
+locks
+	vishal:1.1; strict;
+comment	@ * @;
+
+
+1.1
+date	2015.05.07.15.44.07;	author vishal;	state Exp;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.1
+log
+@Initial revision
+@
+text
+@#include"header.h"
+#include"declaration.h"
+
+ssize_t write_dev(struct file *filp, const char __user *ubuff, size_t size, loff_t *loff)
+{
+	int no_qs;
+	struct DEV *lsdev;
+	lsdev = filp->private_data;
+
+	#ifndef DEBUG
+	printfk(KERN_INFO "BEGIN.....%s\n", __func__);
+	#endif
+	
+	no_qs = size / qset_size;
+	
+	if(no_qs % qset_size )
+			no_qs++;
+
+	lsdev->qset = create_structqset(no_qs);
+
+	#ifndef DEBUG
+	printfk(KERN_INFO "END.....%s\n", __func__);
+	#endif
+
+	return 0;
+}
+
+struct Qset *create_structqset(int fno_qs)
+{
+	int qv;
+	struct Qset *lqset, *first;
+	first = NULL;
+	#ifndef DEBUG
+	printfk(KERN_INFO "BEGIN.....%s\n", __func__);
+	#endif
+
+	for(qv = 0; qv < fno_qs; qv++)
+	{
+		if(qv == 0)
+		{
+			first = lqset = kmalloc(sizeof(struct Qset), GFP_KERNEL);
+			if(!lqset)
+			{
+					#ifndef DEBUG
+					printfk(KERN_ERR "kmalloc failed ...%s\n", __func__);
+					#endif
+			}
+		}
+		else
+		{
+			lqset = kmalloc(sizeof(struct Qset), GFP_KERNEL);
+			if(!lqset)
+			{
+				#ifndef DEBUG
+				printfk(KERN_ERR "kmalloc failed ...%s\n", __func__);
+				#endif
+			}
+		}
+		lqset = lqset->next;
+	}
+	#ifndef DEBUG
+	printfk(KERN_INFO "END.....%s\n", __func__);
+	#endif
+	return first;
+}                                                              
+@

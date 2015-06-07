@@ -1,0 +1,131 @@
+head	1.3;
+access;
+symbols;
+locks; strict;
+comment	@ * @;
+
+
+1.3
+date	2015.05.08.06.05.00;	author emblogic;	state Exp;
+branches;
+next	1.2;
+
+1.2
+date	2015.05.06.14.51.41;	author emblogic;	state Exp;
+branches;
+next	1.1;
+
+1.1
+date	2015.05.06.14.13.13;	author emblogic;	state Exp;
+branches;
+next	;
+
+
+desc
+@open function will access the struct inode and struct file.
+@
+
+
+1.3
+log
+@*** empty log message ***
+@
+text
+@#include "header.h"
+#include "declaration.h"
+
+struct DEV *lsdev;
+int trim_dev(struct DEV *);
+int open_dev(struct inode *inod, struct file *fop)
+{
+	lsdev = sdev;
+	#ifdef DEBUG
+	printk(KERN_INFO "Begin......%s\n", __func__);
+	#endif 
+
+	lsdev = container_of(inod->i_cdev,struct DEV, c_dev);
+	if(!lsdev)
+	{
+		#ifdef DEBUG
+		printk(KERN_ERR "error in container.%s\n", __func__);
+		#endif 
+		goto OUT;
+	}
+
+	trim_dev(lsdev);
+
+	fop->private_data = lsdev;
+
+	if((fop->f_flags & O_ACCMODE) == O_WRONLY)
+	{
+		trim_dev(sdev);	
+	}
+	#ifdef DEBUG
+	printk(KERN_INFO "End......%s\n", __func__);
+	#endif 
+
+	return 0;
+
+OUT:
+	return -1;
+}	
+
+int trim_dev(struct DEV *lsdev)
+{
+	 if(!lsdev)
+	{
+		#ifdef DEBUG
+		printk(KERN_INFO "Need not to trim %s\n", __func__);
+		#endif 
+		goto OUT;
+	}
+		#ifdef DEBUG
+		printk(KERN_INFO "Need to trim %s\n", __func__);
+		#endif 
+
+OUT:
+	return -1;
+}
+@
+
+
+1.2
+log
+@*** empty log message ***
+@
+text
+@a2 1
+#include "filopertion.h"
+d24 1
+a24 1
+	//fop->i_private = lsdev;
+@
+
+
+1.1
+log
+@Initial revision
+@
+text
+@d3 1
+d5 3
+a7 1
+int open(struct inode *inod, struct file *fops)
+a8 1
+	struct Dev *lsdev;
+d17 3
+a19 1
+		perror("container_of");
+d25 1
+a25 1
+	fops->i_private = lsdev;
+d27 1
+a27 1
+	if((fops->f_flags & O_ACCMODE) == WRONLY)
+d41 1
+a41 1
+int trim_dev(struct DEV *sdev)
+d43 1
+a43 1
+	 if(!sdev)
+@

@@ -1,0 +1,834 @@
+head	1.37;
+access;
+symbols;
+locks; strict;
+comment	@ * @;
+
+
+1.37
+date	2015.06.05.17.44.51;	author emblogic;	state Exp;
+branches;
+next	1.36;
+
+1.36
+date	2015.06.05.16.36.05;	author emblogic;	state Exp;
+branches;
+next	1.35;
+
+1.35
+date	2015.06.05.15.41.33;	author emblogic;	state Exp;
+branches;
+next	1.34;
+
+1.34
+date	2015.06.05.15.16.26;	author emblogic;	state Exp;
+branches;
+next	1.33;
+
+1.33
+date	2015.06.05.14.43.25;	author emblogic;	state Exp;
+branches;
+next	1.32;
+
+1.32
+date	2015.06.05.14.31.01;	author emblogic;	state Exp;
+branches;
+next	1.31;
+
+1.31
+date	2015.06.05.13.18.41;	author emblogic;	state Exp;
+branches;
+next	1.30;
+
+1.30
+date	2015.06.05.13.11.32;	author emblogic;	state Exp;
+branches;
+next	1.29;
+
+1.29
+date	2015.06.05.13.06.41;	author emblogic;	state Exp;
+branches;
+next	1.28;
+
+1.28
+date	2015.06.04.19.36.24;	author emblogic;	state Exp;
+branches;
+next	1.27;
+
+1.27
+date	2015.06.04.19.21.31;	author emblogic;	state Exp;
+branches;
+next	1.26;
+
+1.26
+date	2015.06.04.13.30.47;	author emblogic;	state Exp;
+branches;
+next	1.25;
+
+1.25
+date	2015.06.04.13.27.15;	author emblogic;	state Exp;
+branches;
+next	1.24;
+
+1.24
+date	2015.06.04.13.23.00;	author emblogic;	state Exp;
+branches;
+next	1.23;
+
+1.23
+date	2015.06.04.13.19.43;	author emblogic;	state Exp;
+branches;
+next	1.22;
+
+1.22
+date	2015.06.04.13.13.44;	author emblogic;	state Exp;
+branches;
+next	1.21;
+
+1.21
+date	2015.06.04.12.59.28;	author emblogic;	state Exp;
+branches;
+next	1.20;
+
+1.20
+date	2015.06.04.12.58.48;	author emblogic;	state Exp;
+branches;
+next	1.19;
+
+1.19
+date	2015.06.04.12.54.21;	author emblogic;	state Exp;
+branches;
+next	1.18;
+
+1.18
+date	2015.06.04.12.31.31;	author emblogic;	state Exp;
+branches;
+next	1.17;
+
+1.17
+date	2015.06.04.12.23.55;	author emblogic;	state Exp;
+branches;
+next	1.16;
+
+1.16
+date	2015.06.04.12.17.39;	author emblogic;	state Exp;
+branches;
+next	1.15;
+
+1.15
+date	2015.06.04.12.07.30;	author emblogic;	state Exp;
+branches;
+next	1.14;
+
+1.14
+date	2015.06.04.11.57.26;	author emblogic;	state Exp;
+branches;
+next	1.13;
+
+1.13
+date	2015.06.04.11.56.06;	author emblogic;	state Exp;
+branches;
+next	1.12;
+
+1.12
+date	2015.06.04.11.51.49;	author emblogic;	state Exp;
+branches;
+next	1.11;
+
+1.11
+date	2015.06.03.20.46.24;	author emblogic;	state Exp;
+branches;
+next	1.10;
+
+1.10
+date	2015.06.03.20.45.42;	author emblogic;	state Exp;
+branches;
+next	1.9;
+
+1.9
+date	2015.06.03.20.43.41;	author emblogic;	state Exp;
+branches;
+next	1.8;
+
+1.8
+date	2015.06.03.20.41.52;	author emblogic;	state Exp;
+branches;
+next	1.7;
+
+1.7
+date	2015.06.03.20.38.19;	author emblogic;	state Exp;
+branches;
+next	1.6;
+
+1.6
+date	2015.06.03.20.31.37;	author emblogic;	state Exp;
+branches;
+next	1.5;
+
+1.5
+date	2015.06.03.20.30.26;	author emblogic;	state Exp;
+branches;
+next	1.4;
+
+1.4
+date	2015.06.03.20.26.20;	author emblogic;	state Exp;
+branches;
+next	1.3;
+
+1.3
+date	2015.06.03.20.22.33;	author emblogic;	state Exp;
+branches;
+next	1.2;
+
+1.2
+date	2015.06.03.20.11.11;	author emblogic;	state Exp;
+branches;
+next	1.1;
+
+1.1
+date	2015.06.03.17.50.04;	author emblogic;	state Exp;
+branches;
+next	;
+
+
+desc
+@Reade the data .
+@
+
+
+1.37
+log
+@Udate for the seek_curr.
+@
+text
+@#include"header.h"
+#include"declaration.h"
+
+ssize_t reader_dev(struct file *filp, char __user *ubuff, size_t size, loff_t *loff)
+{
+	int no_qs, qun_siz, ret, nocsr, noctr, lv, i, size_rd, siz, pos, init, start, rem, temp;
+	struct DEV *lsdev;
+	struct Qset *lqset;
+	#ifdef DEBUG
+	printk(KERN_INFO "BEGIN.....%s\n", __func__);
+	#endif
+	pos = (int)*loff;
+	siz = data_size;
+	temp = data_size + pos;
+	if(temp < data_size)
+	{
+		pos = temp;
+	}
+	lsdev = filp->private_data;
+
+	ret = i = nocsr = 0;
+
+	if(siz > size)
+		size_rd = size;
+	else
+		size_rd = siz;
+	start = init = pos/quantum_size;
+	rem = pos % quantum_size;
+	noctr = size_rd;
+	#ifdef DEBUG
+	printk(KERN_INFO "loff = %d  pos = %d  init = %d\n", (int)*loff, pos, init);
+	#endif
+	#ifdef DEBUG
+	printk(KERN_INFO "size_rd = %d\n", size_rd);
+	#endif
+
+	no_qs = size_rd / (qset_size * quantum_size);/*Calculation of number of struct qset*/
+	if(size_rd % (qset_size * quantum_size) )
+			no_qs++;
+
+	
+	qun_siz = size_rd / quantum_size;
+	if(size_rd % quantum_size)
+		qun_siz++;
+	
+	lqset = lsdev->qset;
+	while(start >= qset_size)
+	{
+		start = start - quantum_size;
+		lqset = lqset->next;
+	}
+	#ifdef DEBUG
+	printk(KERN_INFO "no_qs = %d qun_siz = %d start = %d\n", no_qs, qun_siz, start);
+	#endif
+	for(lv = init; lv < qun_siz; lv++)
+	{
+		if(lv == init)
+			noctr = quantum_size - rem; 
+		if(noctr > quantum_size)
+			noctr = quantum_size;
+		ret = copy_to_user(ubuff + nocsr, lqset->data[start] + rem, noctr);
+		rem = 0;
+		printk(KERN_INFO "nocsr ..%d noctr ..%d ret = %d\n", nocsr, noctr, ret);
+		
+		#ifdef DEBUG
+		printk(KERN_INFO "Wrote on the device is %s\n", (char *)lqset->data[i]);
+		#endif
+		nocsr = nocsr + noctr - ret;
+		noctr = size_rd - nocsr; 
+		start++;	
+		if(start == qset_size)
+		{
+			if(lqset->next != NULL)
+			{
+				#ifdef DEBUG
+				printk(KERN_ERR "Next qset is not present ...%s\n", __func__);
+				#endif
+				start = 0;
+				lqset = lqset->next;
+			}
+			else 
+				goto OUT;
+		}
+	}
+	#ifdef DEBUG
+	printk(KERN_INFO "END.....%s\n", __func__);
+	#endif
+                       
+	filp->f_pos = nocsr;
+	return nocsr;
+OUT:
+	#ifdef DEBUG
+	printk(KERN_INFO "END.....%s\n", __func__);
+	#endif
+	filp->f_pos = nocsr;
+	return nocsr;
+}
+
+@
+
+
+1.36
+log
+@upgrade the program according to the SEEK_END.
+@
+text
+@d89 1
+d95 1
+@
+
+
+1.35
+log
+@*** empty log message ***
+@
+text
+@d6 1
+a6 1
+	int no_qs, qun_siz, ret, nocsr, noctr, lv, i, size_rd, siz, pos, init, start, rem;
+d14 5
+a18 1
+
+@
+
+
+1.34
+log
+@*** empty log message ***
+@
+text
+@d57 1
+a57 1
+		ret = copy_to_user(ubuff + nocsr, lqset->(data[start] + rem), noctr);
+@
+
+
+1.33
+log
+@*** empty log message ***
+@
+text
+@d57 2
+a58 1
+		ret = copy_to_user(ubuff + nocsr, lqset->data[start], noctr);
+@
+
+
+1.32
+log
+@Move to the exact quantum from where to read.
+@
+text
+@d43 1
+a43 1
+	while(start > quantum_size)
+@
+
+
+1.31
+log
+@*** empty log message ***
+@
+text
+@d6 1
+a6 1
+	int no_qs, qun_siz, ret, nocsr, noctr, lv, i, size_rd, siz, pos, init, start;
+d24 1
+d53 2
+@
+
+
+1.30
+log
+@*** empty log message ***
+@
+text
+@a40 3
+	#ifdef DEBUG
+	printk(KERN_INFO "no_qs = %d qun_siz = %d\n", no_qs, qun_siz);
+	#endif
+d47 3
+@
+
+
+1.29
+log
+@Move to next qset structure using while loop.
+,.
+@
+text
+@a23 6
+	while(start > quantum_size)
+	{
+		start = start - quantum_size;
+		lqset = lqset->next;
+		
+	}
+d45 5
+@
+
+
+1.28
+log
+@Also change the qset array element.
+@
+text
+@d24 6
+@
+
+
+1.27
+log
+@Modify the program according to the lseek.
+>> Loop variable is chan
+@
+text
+@d6 1
+a6 1
+	int no_qs, qun_siz, ret, nocsr, noctr, lv, i, size_rd, siz, pos, init;
+d23 1
+a23 1
+	init = pos/quantum_size;
+d49 1
+a49 1
+		ret = copy_to_user(ubuff + nocsr, lqset->data[i], noctr);
+d57 2
+a58 2
+		i++;	
+		if(i == qset_size)
+d65 1
+a65 1
+				i = 0;
+@
+
+
+1.26
+log
+@*** empty log message ***
+@
+text
+@d6 1
+a6 1
+	int no_qs, qun_siz, ret, nocsr, noctr, lv, i, size_rd, siz;
+d12 1
+a12 1
+
+a14 1
+
+d23 1
+a23 1
+
+d26 3
+d45 1
+a45 1
+	for(lv = 0; lv < qun_siz; lv++)
+@
+
+
+1.25
+log
+@*** empty log message ***
+@
+text
+@d66 2
+a67 2
+			//else 
+			//	goto OUT;
+d75 5
+a79 5
+//OUT:
+//	#ifdef DEBUG
+//	printk(KERN_INFO "END.....%s\n", __func__);
+//	#endif
+//	return nocsr;
+@
+
+
+1.24
+log
+@*** empty log message ***
+@
+text
+@d66 2
+a67 2
+			else 
+				goto OUT;
+d75 5
+a79 5
+OUT:
+	#ifdef DEBUG
+	printk(KERN_INFO "END.....%s\n", __func__);
+	#endif
+	return nocsr;
+@
+
+
+1.23
+log
+@*** empty log message ***
+@
+text
+@d58 1
+a58 1
+			if(!lqset->next)
+d64 3
+a67 2
+			}
+				lqset = lqset->next;
+@
+
+
+1.22
+log
+@*** empty log message ***
+@
+text
+@d58 1
+a58 1
+			if(lqset->next != NULL)
+d64 2
+a66 2
+				//goto OUT;
+			}
+d74 1
+a74 1
+/*OUT:
+d78 1
+a78 1
+	return nocsr;*/
+@
+
+
+1.21
+log
+@*** empty log message ***
+@
+text
+@d47 1
+a47 1
+		ret = copy_to_user(lqset->data[i], ubuff + nocsr, noctr);
+@
+
+
+1.20
+log
+@*** empty log message ***
+@
+text
+@d62 1
+a62 1
+				#endifi
+@
+
+
+1.19
+log
+@*** empty log message ***
+@
+text
+@d58 1
+a58 2
+			i = 0;
+			if(!lqset->next)
+d62 4
+a65 2
+				#endif
+				goto OUT;
+a66 1
+			lqset = lqset->next;
+d74 1
+a74 1
+OUT:
+d78 1
+a78 1
+	return nocsr;
+@
+
+
+1.18
+log
+@*** empty log message ***
+@
+text
+@d48 1
+a48 1
+		printk(KERN_INFO "nocsr ..%d noctr ..%d \n", nocsr, noctr);
+d53 2
+d59 1
+a59 1
+			if(lqset->next)
+a67 2
+		nocsr = nocsr + noctr - ret;
+		noctr = size_rd - nocsr; 
+a68 1
+	//write_to_quantum(lsdev->qset, ubuff);
+@
+
+
+1.17
+log
+@*** empty log message ***
+@
+text
+@d53 1
+a53 1
+		
+@
+
+
+1.16
+log
+@*** empty log message ***
+@
+text
+@a14 3
+	#ifdef DEBUG
+	printk(KERN_INFO "siz = %d\n", siz);
+	#endif
+d26 3
+a44 1
+	printk(KERN_INFO "Before qun_siz.....................................\n");
+@
+
+
+1.15
+log
+@*** empty log message ***
+@
+text
+@d14 1
+d18 1
+@
+
+
+1.14
+log
+@*** empty log message ***
+@
+text
+@d13 1
+a13 1
+	siz = lsdev->data_size;
+@
+
+
+1.13
+log
+@*** empty log message ***
+@
+text
+@d13 1
+a13 1
+	siz = sdev->data_size;
+@
+
+
+1.12
+log
+@Print the value of the qset size and quantum size.
+@
+text
+@d14 3
+@
+
+
+1.11
+log
+@*** empty log message ***
+@
+text
+@d34 3
+@
+
+
+1.10
+log
+@*** empty log message ***
+@
+text
+@a28 1
+	printk(KERN_INFO "Before qun_siz.....................................\n");
+d37 1
+@
+
+
+1.9
+log
+@*** empty log message ***
+@
+text
+@a12 1
+	printk(KERN_INFO "Before qun_siz\n");
+d29 1
+@
+
+
+1.8
+log
+@*** empty log message ***
+@
+text
+@d13 1
+a29 1
+		printk(KERN_INFO "Before qun_siz\n");
+@
+
+
+1.7
+log
+@*** empty log message ***
+@
+text
+@d24 1
+a25 3
+
+
+	
+d29 1
+@
+
+
+1.6
+log
+@*** empty log message ***
+@
+text
+@d6 1
+a6 1
+	int no_qs, qun_siz, ret, nocsw, noctw, lv, i, size_rd, siz;
+d16 1
+a16 1
+	ret = i = nocsw = 0;
+d23 1
+a23 1
+	noctw = size_rd;
+d39 4
+a42 4
+		if(noctw > quantum_size)
+			noctw = quantum_size;
+		ret = copy_to_user(lqset->data[i], ubuff + nocsw, noctw);
+		printk(KERN_INFO "nocsw ..%d noctw ..%d \n", nocsw, noctw);
+d60 2
+a61 2
+		nocsw = nocsw + noctw - ret;
+		noctw = size_rd - nocsw; 
+d68 1
+a68 1
+	return nocsw;
+d73 1
+a73 1
+	return nocsw;
+@
+
+
+1.5
+log
+@*** empty log message ***
+@
+text
+@d6 3
+a11 3
+	int no_qs, qun_siz, ret, nocsw, noctw, lv, i, size_rd, siz;
+	struct DEV *lsdev;
+	struct Qset *lqset;
+@
+
+
+1.4
+log
+@*** empty log message ***
+@
+text
+@d6 3
+a25 3
+	#ifdef DEBUG
+	printk(KERN_INFO "BEGIN.....%s\n", __func__);
+	#endif
+d70 3
+@
+
+
+1.3
+log
+@*** empty log message ***
+@
+text
+@a30 1
+	lsdev->qset = create_structqset(no_qs); /*Function for the creation of the struct Qset*/
+a31 2
+	create_qset(no_qs, lsdev->qset); /*Function for the create of the qset array*/
+
+a34 1
+	create_quantum(qun_siz, lsdev->qset);/*Function to create the quantum*/
+@
+
+
+1.2
+log
+@*** empty log message ***
+@
+text
+@d10 1
+a10 1
+	siz = lsdev->data_size;
+@
+
+
+1.1
+log
+@Initial revision
+@
+text
+@d6 1
+a6 1
+	int no_qs, qun_siz, ret, nocsw, noctw, lv, i, siz_rd, siz;
+d9 2
+d12 3
+a14 1
+	siz = lsdev->data_size;
+d16 1
+a16 1
+		siz_rd = size;
+d19 4
+a26 3
+	ret = i = nocsw = 0;
+	noctw = size_rd;
+	no_qs = size_rd / (qset_size * quantum_size);/*Calculation of number of struct qset*/
+d64 1
+a64 1
+		nocsw = nocsw + quantum_size - ret;
+@

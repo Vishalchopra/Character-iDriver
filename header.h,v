@@ -1,0 +1,140 @@
+head	1.5;
+access;
+symbols;
+locks; strict;
+comment	@ * @;
+
+
+1.5
+date	2015.05.14.10.57.19;	author emblogic;	state Exp;
+branches;
+next	1.4;
+
+1.4
+date	2015.05.08.13.49.18;	author emblogic;	state Exp;
+branches;
+next	1.3;
+
+1.3
+date	2015.04.27.12.44.55;	author emblogic;	state Exp;
+branches;
+next	1.2;
+
+1.2
+date	2015.04.27.12.15.01;	author emblogic;	state Exp;
+branches;
+next	1.1;
+
+1.1
+date	2015.04.27.11.42.31;	author emblogic;	state Exp;
+branches;
+next	;
+
+
+desc
+@Include all the header file
+@
+
+
+1.5
+log
+@*** empty log message ***
+@
+text
+@#include<linux/module.h>
+#include<linux/kernel.h>
+#include<linux/init.h>
+#include<linux/uaccess.h>
+#include<linux/fs.h>
+#include<linux/slab.h>
+#include<linux/cdev.h>
+#include<linux/moduleparam.h>
+
+extern dev_t dev;
+extern unsigned int majorno, nod, minorno, quantum_size, data_size, qset_size, device_size;
+
+#ifndef MAJORNO
+#define MAJORNO 0
+#endif
+
+#ifndef MINORNO
+#define MINORNO 0
+#endif
+
+#ifndef DEBUG
+#define DEBUG 
+#endif
+
+#ifndef NOD
+#define NOD 1
+#endif
+
+#ifndef DEVICE_SIZE
+#define DEVICE_SIZE 1024
+#endif
+
+#ifndef DATA_SIZE
+#define DATA_SIZE 0
+#endif
+
+#ifndef QUANTUM_SIZE
+#define QUANTUM_SIZE 1
+#endif
+
+#ifndef QSET_SIZE
+#define QSET_SIZE 8
+#endif
+
+#define DNAME "vishchopra"
+MODULE_LICENSE("GPL");
+MODULE_AUTHOR("vishchopra");
+MODULE_DESCRIPTION("Initialization");
+@
+
+
+1.4
+log
+@include header file for copy from user
+@
+text
+@d38 1
+a38 1
+#define QUANTUM_SIZE 8
+@
+
+
+1.3
+log
+@*** empty log message ***
+@
+text
+@d4 1
+@
+
+
+1.2
+log
+@Registration for the new device.
+Also Assign value to the qset quantum, device , data
+@
+text
+@d37 1
+a37 1
+#define QUANTUM_SIZE0 8
+d40 2
+a41 2
+#ifndef QSET
+#define QSET 8
+@
+
+
+1.1
+log
+@Initial revision
+@
+text
+@d10 1
+a10 1
+extern unsigned int majorno, nod, minorno;
+d26 16
+@

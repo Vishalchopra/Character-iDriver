@@ -1,0 +1,197 @@
+head	1.11;
+access;
+symbols;
+locks; strict;
+comment	@ * @;
+
+
+1.11
+date	2015.06.04.19.17.55;	author emblogic;	state Exp;
+branches;
+next	1.10;
+
+1.10
+date	2015.06.04.12.07.27;	author emblogic;	state Exp;
+branches;
+next	1.9;
+
+1.9
+date	2015.06.03.20.11.09;	author emblogic;	state Exp;
+branches;
+next	1.8;
+
+1.8
+date	2015.05.08.14.17.56;	author emblogic;	state Exp;
+branches;
+next	1.7;
+
+1.7
+date	2015.05.08.13.39.54;	author emblogic;	state Exp;
+branches;
+next	1.6;
+
+1.6
+date	2015.05.08.13.13.03;	author emblogic;	state Exp;
+branches;
+next	1.5;
+
+1.5
+date	2015.05.08.12.54.00;	author emblogic;	state Exp;
+branches;
+next	1.4;
+
+1.4
+date	2015.05.08.06.04.59;	author emblogic;	state Exp;
+branches;
+next	1.3;
+
+1.3
+date	2015.05.06.14.12.30;	author emblogic;	state Exp;
+branches;
+next	1.2;
+
+1.2
+date	2015.04.27.12.16.08;	author emblogic;	state Exp;
+branches;
+next	1.1;
+
+1.1
+date	2015.04.27.11.42.31;	author emblogic;	state Exp;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.11
+log
+@Declaration of the lseek.
+@
+text
+@//extern struct file_operations ofs;
+
+//extern int quantum_size, qset_size, device_size, data_size, majorno, minorno;
+struct Qset
+{
+	struct Qset *next;
+	void **data;
+};
+struct DEV
+{
+	struct Qset *qset;
+	int quantum_size, qset_size, device_size, data_size;
+	struct cdev c_dev;
+};
+
+extern struct DEV *sdev;
+
+int open_dev(struct inode *, struct file *);
+int close_dev(struct inode *, struct file *);
+ssize_t write_dev(struct file*, const char __user *, size_t, loff_t *);
+ssize_t reader_dev(struct file*, char __user *, size_t, loff_t *);
+loff_t lseek_dev(struct file*, loff_t, int);
+struct Qset* create_structqset(int);
+int create_qset(int, struct Qset *);
+int create_quantum(int, struct Qset *);
+//int write_to_quantum(struct Qset *, const char __user *);
+@
+
+
+1.10
+log
+@*** empty log message ***
+@
+text
+@d22 1
+@
+
+
+1.9
+log
+@*** empty log message ***
+@
+text
+@d3 1
+@
+
+
+1.8
+log
+@*** empty log message ***
+@
+text
+@d20 1
+@
+
+
+1.7
+log
+@Chage the protoype of the create_to_quantum.
+@
+text
+@d23 1
+a23 1
+int write_to_quantum(struct Qset *, const char __user *);
+@
+
+
+1.6
+log
+@*** empty log message ***
+@
+text
+@d23 1
+a23 1
+int write_to_quantum(struct Qset *, char *);
+@
+
+
+1.5
+log
+@Declarate the prototype for create_qset, create_quantum and create _to_quantum.
+@
+text
+@d23 1
+@
+
+
+1.4
+log
+@*** empty log message ***
+@
+text
+@d22 1
+@
+
+
+1.3
+log
+@Declare the prototype for the open_dev and close_dev functions.
+@
+text
+@d19 3
+@
+
+
+1.2
+log
+@include variable in DEV.
+quantum, qset, data, device.
+@
+text
+@d1 1
+a1 1
+extern struct file_operations ofs;
+d16 3
+@
+
+
+1.1
+log
+@Initial revision
+@
+text
+@d11 1
+@

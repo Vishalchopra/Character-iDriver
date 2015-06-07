@@ -1,0 +1,948 @@
+head	1.43;
+access;
+symbols;
+locks; strict;
+comment	@ * @;
+
+
+1.43
+date	2015.06.04.19.18.19;	author emblogic;	state Exp;
+branches;
+next	1.42;
+
+1.42
+date	2015.06.04.13.59.28;	author emblogic;	state Exp;
+branches;
+next	1.41;
+
+1.41
+date	2015.06.04.13.54.24;	author emblogic;	state Exp;
+branches;
+next	1.40;
+
+1.40
+date	2015.06.04.13.46.58;	author emblogic;	state Exp;
+branches;
+next	1.39;
+
+1.39
+date	2015.06.04.13.25.21;	author emblogic;	state Exp;
+branches;
+next	1.38;
+
+1.38
+date	2015.06.04.13.24.49;	author emblogic;	state Exp;
+branches;
+next	1.37;
+
+1.37
+date	2015.06.04.13.22.59;	author emblogic;	state Exp;
+branches;
+next	1.36;
+
+1.36
+date	2015.06.04.13.19.42;	author emblogic;	state Exp;
+branches;
+next	1.35;
+
+1.35
+date	2015.06.04.13.09.05;	author emblogic;	state Exp;
+branches;
+next	1.34;
+
+1.34
+date	2015.06.04.12.58.47;	author emblogic;	state Exp;
+branches;
+next	1.33;
+
+1.33
+date	2015.06.04.12.54.20;	author emblogic;	state Exp;
+branches;
+next	1.32;
+
+1.32
+date	2015.06.04.12.47.05;	author emblogic;	state Exp;
+branches;
+next	1.31;
+
+1.31
+date	2015.06.04.12.44.57;	author emblogic;	state Exp;
+branches;
+next	1.30;
+
+1.30
+date	2015.06.04.12.41.14;	author emblogic;	state Exp;
+branches;
+next	1.29;
+
+1.29
+date	2015.06.04.12.36.04;	author emblogic;	state Exp;
+branches;
+next	1.28;
+
+1.28
+date	2015.06.04.12.33.06;	author emblogic;	state Exp;
+branches;
+next	1.27;
+
+1.27
+date	2015.06.04.12.31.29;	author emblogic;	state Exp;
+branches;
+next	1.26;
+
+1.26
+date	2015.06.04.12.19.06;	author emblogic;	state Exp;
+branches;
+next	1.25;
+
+1.25
+date	2015.06.04.12.17.37;	author emblogic;	state Exp;
+branches;
+next	1.24;
+
+1.24
+date	2015.06.04.12.07.29;	author emblogic;	state Exp;
+branches;
+next	1.23;
+
+1.23
+date	2015.06.03.17.49.10;	author emblogic;	state Exp;
+branches;
+next	1.22;
+
+1.22
+date	2015.06.03.16.00.38;	author emblogic;	state Exp;
+branches;
+next	1.21;
+
+1.21
+date	2015.06.03.15.59.36;	author emblogic;	state Exp;
+branches;
+next	1.20;
+
+1.20
+date	2015.06.03.15.51.30;	author emblogic;	state Exp;
+branches;
+next	1.19;
+
+1.19
+date	2015.06.03.15.49.39;	author emblogic;	state Exp;
+branches;
+next	1.18;
+
+1.18
+date	2015.06.03.15.46.22;	author emblogic;	state Exp;
+branches;
+next	1.17;
+
+1.17
+date	2015.06.03.15.22.50;	author emblogic;	state Exp;
+branches;
+next	1.16;
+
+1.16
+date	2015.05.14.12.37.50;	author emblogic;	state Exp;
+branches;
+next	1.15;
+
+1.15
+date	2015.05.14.12.36.25;	author emblogic;	state Exp;
+branches;
+next	1.14;
+
+1.14
+date	2015.05.14.12.22.10;	author emblogic;	state Exp;
+branches;
+next	1.13;
+
+1.13
+date	2015.05.14.12.21.01;	author emblogic;	state Exp;
+branches;
+next	1.12;
+
+1.12
+date	2015.05.14.12.16.43;	author emblogic;	state Exp;
+branches;
+next	1.11;
+
+1.11
+date	2015.05.14.12.09.20;	author emblogic;	state Exp;
+branches;
+next	1.10;
+
+1.10
+date	2015.05.14.12.01.18;	author emblogic;	state Exp;
+branches;
+next	1.9;
+
+1.9
+date	2015.05.14.11.39.35;	author emblogic;	state Exp;
+branches;
+next	1.8;
+
+1.8
+date	2015.05.14.11.37.46;	author emblogic;	state Exp;
+branches;
+next	1.7;
+
+1.7
+date	2015.05.14.11.19.13;	author emblogic;	state Exp;
+branches;
+next	1.6;
+
+1.6
+date	2015.05.14.11.05.12;	author emblogic;	state Exp;
+branches;
+next	1.5;
+
+1.5
+date	2015.05.14.11.03.40;	author emblogic;	state Exp;
+branches;
+next	1.4;
+
+1.4
+date	2015.05.14.10.58.23;	author emblogic;	state Exp;
+branches;
+next	1.3;
+
+1.3
+date	2015.05.14.10.57.21;	author emblogic;	state Exp;
+branches;
+next	1.2;
+
+1.2
+date	2015.05.14.10.53.05;	author emblogic;	state Exp;
+branches;
+next	1.1;
+
+1.1
+date	2015.05.14.10.48.54;	author emblogic;	state Exp;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.43
+log
+@Modify the program according to the lseek.
+Loop variable is changed.
+@
+text
+@#include"header.h"
+#include"declaration.h"
+
+ssize_t write_dev(struct file *filp, const char __user *ubuff, size_t size, loff_t *loff)
+{
+	int no_qs, qun_siz, ret, nocsw, noctw, lv, i;
+	struct DEV *lsdev;
+	struct Qset *lqset;
+	lsdev = filp->private_data;
+	//char buff[] = ubuff;
+	#ifdef DEBUG
+	printk(KERN_INFO "BEGIN.....%s\n", __func__);
+	#endif
+	ret = i = nocsw = 0;
+	no_qs = size / (qset_size * quantum_size);/*Calculation of number of struct qset*/
+	
+	if(size % (qset_size * quantum_size) )
+			no_qs++;
+
+	lsdev->qset = create_structqset(no_qs); /*Function for the creation of the struct Qset*/
+	
+	create_qset(no_qs, lsdev->qset); /*Function for the create of the qset array*/
+
+	qun_siz = size / quantum_size;
+	if(size % quantum_size)
+		qun_siz++;
+	create_quantum(qun_siz, lsdev->qset);/*Function to create the quantum*/
+	
+	noctw = size;
+	lqset = lsdev->qset;
+	for(lv = 0; lv < qun_siz; lv++)
+	{
+		if(noctw > quantum_size)
+			noctw = quantum_size;
+		ret = copy_from_user(lqset->data[i], ubuff + nocsw, noctw);
+		printk(KERN_INFO "nocsw ..%d noctw ..%d  i = %d\n", nocsw, noctw, i);
+		#ifdef DEBUG
+		printk(KERN_INFO "Wrote on the device is %s\n", (char *)lqset->data[i]);
+		#endif
+		i++;
+		nocsw = nocsw + noctw - ret;
+		noctw = size - nocsw; 
+		if(i == qset_size)
+		{
+			/*if(!lqset->next)
+			{
+				#ifdef DEBUG
+				printk(KERN_ERR "Next qset is not present ...%s\n", __func__);
+				#endif
+				goto OUT;
+			}*/
+			if(lqset->next != NULL)
+			{
+				i = 0;
+				lqset = lqset->next;
+			}
+			//else
+			//	goto OUT;
+		}
+
+	}
+	#ifdef DEBUG
+	printk(KERN_INFO "END.....%s\n", __func__);
+	#endif
+                       
+	data_size = nocsw;
+	lsdev->data_size = nocsw;
+	#ifdef DEBUG
+	printk(KERN_INFO "._siz....%d\n", data_size);
+	#endif
+	filp->f_pos = *loff;
+	return nocsw;
+//OUT:
+//	data_size = nocsw;
+//	return nocsw;
+}
+
+struct Qset *create_structqset(int fno_qs)
+{
+	int qv;
+	struct Qset *lqset, *first;
+	first = NULL;
+	#ifdef DEBUG
+	printk(KERN_INFO "BEGIN.....%s\n", __func__);
+	#endif
+
+	for(qv = 0; qv < fno_qs; qv++)
+	{
+		if(qv == 0)
+		{
+			first = lqset = kmalloc(sizeof(struct Qset), GFP_KERNEL);
+			if(!lqset)
+			{
+				#ifdef DEBUG
+				printk(KERN_ERR "kmalloc failed ...%s\n", __func__);
+				#endif
+				goto OUT;
+			}
+			memset(lqset, '\0', sizeof(struct Qset));
+		}
+		else
+		{
+			lqset->next = kmalloc(sizeof(struct Qset), GFP_KERNEL);
+			if(!lqset)
+			{
+				#ifdef DEBUG
+				printk(KERN_ERR "kmalloc failed ...%s\n", __func__);
+				#endif
+				goto OUT;
+			}
+			memset(lqset->next, '\0', sizeof(struct Qset));
+		}
+		if(lqset->next)
+ 			lqset = lqset->next;
+	}
+	#ifdef DEBUG
+	printk(KERN_INFO "END.....%s\n", __func__);
+	#endif
+	return first;
+OUT:
+	return 0;
+}
+
+int create_qset(int fno_qs1, struct Qset *lqset)
+{
+	int qv;
+	#ifdef DEBUG
+	printk(KERN_INFO "BEGIN.....%s\n", __func__);
+	printk(KERN_INFO "%d fno_qs1 %s\n",fno_qs1, __func__);
+	#endif
+	for(qv = 0; qv < fno_qs1; qv++)
+	{
+		printk(KERN_INFO "%d no. of qset create %s\n", qv,__func__);
+		lqset->data = kmalloc(sizeof(void *) * qset_size, GFP_KERNEL);
+		if(!lqset->data)
+		{
+			#ifdef DEBUG
+			printk(KERN_ERR "kmalloc failed ...%s\n", __func__);
+			#endif
+			goto OUT;
+		}
+		memset(lqset->data, '\0', sizeof(void *) * qset_size);
+		if(lqset->next)
+			lqset = lqset->next;
+	}
+	#ifdef DEBUG
+	printk(KERN_INFO "End.....%s\n", __func__);
+	#endif
+	return 0;
+OUT:
+	return -1;
+}                                  
+
+
+int create_quantum(int qun_siz, struct Qset *lsdev)
+{
+	int qv, i;
+	i = 0;
+	for(qv = 0; qv < qun_siz; qv++)
+	{
+		lsdev->data[i] = kmalloc(quantum_size, GFP_KERNEL);
+		if(!lsdev->data[i])
+		{
+			#ifdef DEBUG
+			printk(KERN_ERR "kmalloc failed ...%s\n", __func__);
+			#endif
+		}
+		i++;
+		if(i == qset_size)
+		{
+			i = 0;
+			lsdev = lsdev->next;
+			if(!lsdev)
+			{
+				#ifdef DEBUG
+				printk(KERN_ERR "kmalloc failed ...%s\n", __func__);
+				#endif
+				goto OUT;
+			}
+		}
+	}
+	return 0;
+OUT:
+	return -1;
+}
+@
+
+
+1.42
+log
+@*** empty log message ***
+@
+text
+@d71 1
+@
+
+
+1.41
+log
+@*** empty log message ***
+@
+text
+@d102 1
+a102 1
+			lqset = kmalloc(sizeof(struct Qset), GFP_KERNEL);
+d112 1
+a112 1
+		if(lqset)
+@
+
+
+1.40
+log
+@*** empty log message ***
+@
+text
+@d102 1
+a102 1
+			lqset->next = kmalloc(sizeof(struct Qset), GFP_KERNEL);
+d112 1
+a112 1
+		if(lqset->next)
+@
+
+
+1.39
+log
+@*** empty log message ***
+@
+text
+@d102 1
+a102 1
+			lqset = kmalloc(sizeof(struct Qset), GFP_KERNEL);
+d110 1
+a110 1
+			memset(lqset, '\0', sizeof(struct Qset));
+@
+
+
+1.38
+log
+@*** empty log message ***
+@
+text
+@d72 3
+a74 3
+OUT:
+	data_size = nocsw;
+	return nocsw;
+@
+
+
+1.37
+log
+@*** empty log message ***
+@
+text
+@d57 2
+a58 2
+			else
+				goto OUT;
+@
+
+
+1.36
+log
+@*** empty log message ***
+@
+text
+@d45 1
+a45 1
+			if(!lqset->next)
+d51 3
+a53 3
+			}
+			//if(lqset->next != NULL)
+		//	{
+d56 3
+a58 1
+		//	}
+@
+
+
+1.35
+log
+@*** empty log message ***
+@
+text
+@d45 1
+a45 1
+			/*if(!lqset->next)
+d51 3
+a53 3
+			}*/
+			if(lqset->next != NULL)
+			{
+d56 1
+a56 1
+			}
+d70 1
+a70 1
+/*OUT:
+d72 1
+a72 1
+	return nocsw;*/
+@
+
+
+1.34
+log
+@*** empty log message ***
+@
+text
+@d65 1
+@
+
+
+1.33
+log
+@*** empty log message ***
+@
+text
+@d45 1
+a45 2
+			i = 0;
+			if(!lqset->next)
+d51 5
+a56 1
+			lqset = lqset->next;
+d69 1
+a69 1
+OUT:
+d71 1
+a71 1
+	return nocsw;
+@
+
+
+1.32
+log
+@*** empty log message ***
+@
+text
+@a14 1
+	noctw = size;
+d29 1
+@
+
+
+1.31
+log
+@*** empty log message ***
+@
+text
+@a27 3
+		#ifdef DEBUG
+		printk(KERN_INFO "no_qs =  %d  qun_siz = %d................\n", no_qs, qun_siz);
+		#endif
+d41 2
+a55 3
+		nocsw = nocsw + noctw - ret;
+		noctw = size - nocsw; 
+		printk(KERN_INFO "nocsw ..%d noctw ..%d  i = %d\n", nocsw, noctw, i);
+@
+
+
+1.30
+log
+@*** empty log message ***
+@
+text
+@d28 3
+@
+
+
+1.29
+log
+@*** empty log message ***
+@
+text
+@d40 1
+a53 1
+		i++;
+@
+
+
+1.28
+log
+@*** empty log message ***
+@
+text
+@a39 1
+		i++;
+d52 2
+@
+
+
+1.27
+log
+@*** empty log message ***
+@
+text
+@d44 1
+a44 1
+			if(lqset->next)
+@
+
+
+1.26
+log
+@*** empty log message ***
+@
+text
+@d40 1
+@
+
+
+1.25
+log
+@*** empty log message ***
+@
+text
+@a59 1
+	return nocsw;
+d64 1
+@
+
+
+1.24
+log
+@*** empty log message ***
+@
+text
+@d62 3
+@
+
+
+1.23
+log
+@save the data to the data size
+@
+text
+@d61 1
+a61 1
+	lsdev->data_size = nocsw;
+d63 1
+a63 1
+	lsdev->data_size = nocsw;
+@
+
+
+1.22
+log
+@*** empty log message ***
+@
+text
+@d61 1
+d63 1
+@
+
+
+1.21
+log
+@*** empty log message ***
+@
+text
+@d54 1
+@
+
+
+1.20
+log
+@*** empty log message ***
+@
+text
+@a53 1
+		memset(lqset->data, '\0', 4);
+a54 1
+	//write_to_quantum(lsdev->qset, ubuff);
+a171 9
+/*
+int write_to_quantum(struct Qset *lsdev, const char __user *ubuff)
+{
+	int ret;
+	ret = 0;
+	//lsdev->data[0] = (char *)ubuff;
+
+	return 0;
+}*/
+@
+
+
+1.19
+log
+@*** empty log message ***
+@
+text
+@d54 1
+a54 1
+		lqset->data[i] = NULL;
+@
+
+
+1.18
+log
+@*** empty log message ***
+@
+text
+@d36 1
+a36 1
+		printk(KERN_INFO "nocsw ..%d noctw ..%d \n", nocsw, noctw);
+d54 1
+a54 1
+		//lqset->data[i] = NULL;
+@
+
+
+1.17
+log
+@*** empty log message ***
+@
+text
+@d33 1
+a33 1
+		if(noctw < quantum_size)
+@
+
+
+1.16
+log
+@*** empty log message ***
+@
+text
+@d33 1
+a33 1
+		if(noctw > quantum_size)
+d52 1
+a52 1
+		nocsw = nocsw + quantum_size - ret;
+d54 1
+@
+
+
+1.15
+log
+@*** empty log message ***
+@
+text
+@d61 2
+@
+
+
+1.14
+log
+@*** empty log message ***
+@
+text
+@d45 4
+a48 1
+				lqset = lqset->next;
+d50 1
+@
+
+
+1.13
+log
+@*** empty log message ***
+@
+text
+@d38 1
+a38 1
+		printk(KERN_INFO "Wrote on the device is %c\n", (char *)lqset->data[i]);
+@
+
+
+1.12
+log
+@*** empty log message ***
+@
+text
+@d38 1
+a38 1
+		printk(KERN_INFO "Wrote on the device is %c\n", *(char *)lqset->data[0]);
+d40 8
+@
+
+
+1.11
+log
+@*** empty log message ***
+@
+text
+@d14 1
+a14 1
+	i = nocsw = 0;
+d40 1
+a40 1
+		nocsw = nocsw + quantum_size;
+@
+
+
+1.10
+log
+@*** empty log message ***
+@
+text
+@d102 1
+a102 1
+	printk(KERN_INFO "%d fno_qs1 %s\n", __func__);
+@
+
+
+1.9
+log
+@*** empty log message ***
+@
+text
+@d102 1
+d106 1
+@
+
+
+1.8
+log
+@calculate noctw and nocsw.
+@
+text
+@d34 1
+a34 1
+			noctw = quantum_size
+@
+
+
+1.7
+log
+@*** empty log message ***
+@
+text
+@d15 1
+a15 1
+	noctw = quantum_size;
+d33 4
+a36 1
+		ret = copy_from_user(lqset->data[i], ubuff + nocsw, quantum_size);
+d41 1
+d48 1
+a48 1
+	return 0;
+@
+
+
+1.6
+log
+@*** empty log message ***
+@
+text
+@d129 1
+a129 1
+		if(lsdev->data[i])
+@
+
+
+1.5
+log
+@Update the number of character to read.
+@
+text
+@d27 1
+a27 1
+		qun_siz;
+d37 1
+a37 1
+		nocsw = nocsw + quantum-size;
+@
+
+
+1.4
+log
+@*** empty log message ***
+@
+text
+@d33 1
+a33 1
+		ret = copy_from_user(lqset->data[i], ubuff + nocsw, noctw);
+d37 1
+@
+
+
+1.3
+log
+@*** empty log message ***
+@
+text
+@d27 1
+a27 1
+		qun_size;
+@
+
+
+1.2
+log
+@*** empty log message ***
+@
+text
+@d26 2
+@
+
+
+1.1
+log
+@Initial revision
+@
+text
+@d15 1
+@

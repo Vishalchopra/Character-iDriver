@@ -1,0 +1,66 @@
+head	1.2;
+access;
+symbols;
+locks; strict;
+comment	@ * @;
+
+
+1.2
+date	2015.04.27.11.33.12;	author emblogic;	state Exp;
+branches;
+next	1.1;
+
+1.1
+date	2015.04.27.10.25.11;	author emblogic;	state Exp;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.2
+log
+@*** empty log message ***
+@
+text
+@#include"header.h"
+#include"declaration.h"
+
+static void __exit exit_ker_pro(void)
+{
+	int dvar;
+	#ifdef DEBUG
+	printk("Exit from the kernel %d\n", nod);
+	#endif
+	for(dvar = 0; dvar < nod; dvar++)
+	{
+		cdev_del(&sdev[dvar].c_dev);
+	}
+		kfree(sdev);
+	unregister_chrdev_region(dev, nod);
+
+	#ifdef DEBUG
+	printk(KERN_INFO "Unregister : THE END:\n");
+	#endif
+	
+//	return 0;
+}
+
+module_exit(exit_ker_pro);
+@
+
+
+1.1
+log
+@Initial revision
+@
+text
+@d6 1
+d10 5
+a14 3
+
+	kfree(sdev);
+	
+@

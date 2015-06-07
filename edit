@@ -1,0 +1,11 @@
+#! /bin/bash
+
+co -l init.c
+co -l header.h
+co -l declaration.h
+co -l clean.c
+co -l open_dev.c
+co -l close_dev.c
+co -l write.c
+co -l reader_dev.c
+co -l lseek_dev.c

@@ -1,0 +1,76 @@
+#! /bin/bash
+
+ci init.c
+ci header.h
+ci declaration.h
+ci clean.c
+ci open_dev.c
+ci close_dev.c
+ci write.c
+ci reader_dev.c
+ci lseek_dev.c
+
+
+co  init.c
+co  header.h
+co  declaration.h
+co  clean.c
+co  open_dev.c
+co  close_dev.c
+co  write.c
+co  reader_dev.c
+co lseek_dev.c
+
+if ( make )
+then
+	read
+else
+	echo "MAKE failure"
+	exit 0
+fi
+
+echo "Enter the register size"
+read quantum_siz
+echo "Enter the number of register"
+read qset_siz
+
+insmod ./modules/vish_ch.ko nod=5 quantum_size=$quantum_siz qset_size=$qset_siz
+
+dmesg
+read
+
+cat /proc/devices
+read
+
+echo "Enter the major number."
+read majorno
+
+mknod nod c $majorno 0
+
+dmesg
+read
+
+echo "Waiting for the application to run"
+read
+
+make writer
+
+./writer nod 
+read 
+
+make reader
+
+./reader nod 
+read
+ 
+rmmod vish_ch
+
+dmesg
+read
+
+cat /proc/devices
+read
+
+rm -rf modules
+rm -rf modules.symvers
+rm -rf modules.order
